@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>التسجيل والدفع — STEP المكثفة 2026</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="simpleHeader">
+    <div class="container simpleHeader__inner">
+      <a class="backLink" href="index.html">← الرئيسية</a>
+      <div class="simpleHeader__title">التسجيل والدفع</div>
+      <a class="btn btn--ghost" href="test.html">تحديد المستوى</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="card">
+        <h1 class="section__title">قبل التسجيل… لازم تكون خلّصت تحديد المستوى ✅</h1>
+        <p class="section__lead">
+          لو ما سويت تحديد المستوى، الموقع بيحوّلك تلقائيًا للاختبار عشان تطلع لك الخطة المناسبة.
+        </p>
+      </div>
+
+      <div class="card" id="gateCard">
+        <h2>🔒 شرط الدخول للتسجيل</h2>
+        <p>لازم تكمل اختبار تحديد المستوى أول.</p>
+        <a class="btn btn--primary btn--block" href="test.html">ابدأ تحديد المستوى</a>
+      </div>
+
+      <div class="card hidden" id="mainRegister">
+        <h2>💳 بيانات التحويل البنكي (الرسمية)</h2>
+        <p class="muted">السعر الحالي: <b>299 ريال</b> — السعر الرسمي بعد الإغلاق: <b>449 ريال</b></p>
+
+        <div class="bankBox">
+          <div class="bankRow">
+            <div><b>البنك:</b> بنك الإنماء</div>
+          </div>
+
+          <div class="bankRow">
+            <div><b>رقم الحساب:</b> <span class="mono" id="acc">68206067557000</span></div>
+            <button class="btn btn--tiny" data-copy="#acc">نسخ</button>
+          </div>
+
+          <div class="bankRow">
+            <div><b>الآيبان:</b> <span class="mono" id="iban">SA4905000068206067557000</span></div>
+            <button class="btn btn--tiny" data-copy="#iban">نسخ</button>
+          </div>
+
+          <div class="bankRow">
+            <div><b>اسم المستفيد:</b> <span id="benef">مؤسسة كريتيفا جلوبال لتقنية المعلومات</span></div>
+            <button class="btn btn--tiny" data-copy="#benef">نسخ</button>
+          </div>
+
+          <div class="bankRow">
+            <div><b>غرض التحويل (مهم):</b> مشتريات دورة STEP المكثفة</div>
+          </div>
+
+          <div class="note">
+            تنبيه: أحيانًا يظهر اسم المستفيد مختصر في تطبيق البنك، هذا طبيعي — الأهم تكون البيانات صحيحة وتحتفظ بالإيصال.
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>📝 نموذج التسجيل (مع رفع الإيصال)</h2>
+        <p class="muted">
+          بعد الإرسال، بيفتح لك تليجرام برسالة جاهزة للحساب الرسمي <b>@Ayed_Academy_2026</b>  
+          وتقوم **ترسل الإيصال مرة ثانية في نفس المحادثة للتأكيد النهائي**.
+        </p>
+
+        <form id="regForm" class="form">
+          <div class="formGrid">
+            <label class="field">
+              <span>اسمك الثلاثي *</span>
+              <input name="fullName" required placeholder="مثال: جود محمد العتيبي" />
+            </label>
+
+            <label class="field">
+              <span>طريقة التواصل *</span>
+              <select name="contactType" required>
+                <option value="telegram" selected>تليجرام</option>
+                <option value="whatsapp">واتساب</option>
+                <option value="email">إيميل</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>حساب/رقم التواصل *</span>
+              <input name="contactValue" required placeholder="مثال: @username أو 05xxxxxxxx" />
+            </label>
+
+            <label class="field">
+              <span>موعد الاختبار (اختياري)</span>
+              <input name="examDate" type="date" />
+            </label>
+
+            <label class="field">
+              <span>منطقة الاختبار (اختياري)</span>
+              <select name="region">
+                <option value="">—</option>
+                <option>الرياض</option><option>جدة</option><option>مكة</option><option>الدمام</option>
+                <option>المدينة</option><option>القصيم</option><option>أبها</option><option>تبوك</option>
+                <option>حائل</option><option>نجران</option><option>الطائف</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>الدرجة المستهدفة</span>
+              <select name="goal">
+                <option>60+</option><option>70+</option><option selected>80+</option><option>90+</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>هل اختبرت STEP سابقًا؟</span>
+              <select name="tookBefore">
+                <option value="no" selected>لا</option>
+                <option value="yes">نعم</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>درجتك السابقة (إن وجدت)</span>
+              <input name="prevScore" type="number" min="0" max="100" placeholder="مثال: 44" />
+            </label>
+
+            <label class="field">
+              <span>سبب الاختبار</span>
+              <select name="reason">
+                <option>جامعة/تجسير</option>
+                <option>وظيفة</option>
+                <option>ابتعاث</option>
+                <option>تطوير ذاتي</option>
+                <option>غير ذلك</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>ملاحظات (اختياري)</span>
+              <input name="notes" placeholder="مثال: اختباري قريب وأبي مسار 7 أيام" />
+            </label>
+
+            <label class="field">
+              <span>ارفاق الإيصال (إلزامي) *</span>
+              <input name="receipt" type="file" accept="image/*,application/pdf" required />
+              <small class="muted">الملف للتأكد فقط. بعد الإرسال، ترسله أيضًا بالتليجرام للتأكيد النهائي.</small>
+            </label>
+          </div>
+
+          <div class="checkboxes">
+            <label class="check">
+              <input type="checkbox" required />
+              <span>أتعهد بعدم مشاركة أو تسريب أي محتوى من الدورة، وأتحمل المسؤولية في حال المخالفة.</span>
+            </label>
+            <label class="check">
+              <input type="checkbox" required />
+              <span>أقر أني حوّلت على البيانات الرسمية المذكورة أعلاه، وبأرسل الإيصال في التليجرام للتأكيد النهائي.</span>
+            </label>
+          </div>
+
+          <button class="btn btn--primary btn--block" type="submit">إرسال الطلب وفتح رسالة التليجرام ✅</button>
+
+          <div class="tiny muted">
+            _______<br>
+            بعد إرسال الطلب: لا ترسل أكثر من رسالة عشان ما يتأخر الرد عليك. إذا التحويل “سريع/لحظي” عادة يسرّع التأكيد.
+          </div>
+        </form>
+
+        <div class="divider"></div>
+        <div class="miniLinks">
+          <a href="privacy.html">سياسة الخصوصية</a>
+          <a href="refund.html">الاسترجاع</a>
+          <a href="terms.html">الشروط</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/questions.js"></script>
+  <script src="assets/plan.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
