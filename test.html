@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>تحديد المستوى — STEP المكثفة 2026</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="simpleHeader">
+    <div class="container simpleHeader__inner">
+      <a class="backLink" href="index.html">← رجوع</a>
+      <div class="simpleHeader__title">تحديد المستوى (إلزامي قبل التسجيل)</div>
+      <a class="btn btn--ghost" href="register.html">التسجيل</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="card">
+        <h1 class="section__title">خلّنا نطلع لك خطة على قدّك 🎯</h1>
+        <p class="section__lead">
+          جاوب كم سؤال سريع، بعدها يحلّلك اختبار قصير (من بنك أسئلة صعب) ويطلع لك:
+          <b>نقاط ضعفك + مسارك المقترح + وش تركز عليه</b>.
+        </p>
+      </div>
+
+      <div class="card" id="stepProfile">
+        <h2>1) أسئلة سريعة عن وضعك</h2>
+
+        <div class="formGrid">
+          <label class="field">
+            <span>كم باقي على اختبارك؟</span>
+            <select id="timeToExam">
+              <option value="7">أقل من أسبوع</option>
+              <option value="14">أسبوعين</option>
+              <option value="30" selected>شهر</option>
+              <option value="60">شهرين أو أكثر</option>
+              <option value="0">لسا ما حجزت</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>هل اختبرت STEP قبل؟</span>
+            <select id="tookBefore">
+              <option value="no" selected>لا</option>
+              <option value="yes">نعم</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>درجتك السابقة (اختياري)</span>
+            <input id="prevScore" type="number" min="0" max="100" placeholder="مثال: 44" />
+          </label>
+
+          <label class="field">
+            <span>الدرجة المستهدفة</span>
+            <select id="targetScore">
+              <option>60+</option><option>70+</option><option selected>80+</option><option>90+</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>أكثر قسم تتعب فيه؟</span>
+            <select id="weakest">
+              <option value="grammar">Grammar</option>
+              <option value="reading">Reading</option>
+              <option value="listening">Listening</option>
+              <option value="time">إدارة الوقت/التوتر</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>طريقة مذاكرتك المفضلة؟</span>
+            <select id="studyStyle">
+              <option value="fast">مختصر ومباشر</option>
+              <option value="balanced" selected>متوازن</option>
+              <option value="deep">تفصيل وتأسيس</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="note">
+          👇 بعدها بيسألك اختبار قصير (Grammar + Reading + Listening) ويطلع تقريرك.
+        </div>
+
+        <button class="btn btn--primary btn--block" id="startTest">ابدأ الاختبار الآن</button>
+      </div>
+
+      <div class="card hidden" id="quizCard">
+        <div class="quizTop">
+          <div class="quizTop__meta">
+            <span class="pill" id="pillSection">Section</span>
+            <span class="pill" id="pillProgress">0/0</span>
+          </div>
+          <button class="btn btn--ghost" id="quitBtn">إنهاء</button>
+        </div>
+
+        <div id="stimulusBox" class="stimulus hidden"></div>
+
+        <h2 class="quizQ" id="qText">...</h2>
+        <div class="choices" id="choices"></div>
+
+        <div class="quizActions">
+          <button class="btn btn--ghost" id="prevBtn" disabled>السابق</button>
+          <button class="btn btn--primary" id="nextBtn" disabled>التالي</button>
+        </div>
+      </div>
+
+      <div class="card hidden" id="resultCard">
+        <h2>✅ تقريرك وخطتك المقترحة</h2>
+        <div class="scores" id="scores"></div>
+
+        <div class="planBox" id="planBox"></div>
+
+        <div class="ctaRow">
+          <a class="btn btn--primary" href="register.html" id="goRegister">كمّل للتسجيل والدفع</a>
+          <button class="btn btn--ghost" id="retry">أعيد الاختبار</button>
+        </div>
+
+        <div class="alert">
+          تذكير: التسجيل يتأكد بعد الإيصال. بعد ما ترفع الإيصال بالموقع، بتفتح لك رسالة تليجرام جاهزة وترسل الإيصال هناك.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/questions.js"></script>
+  <script src="assets/plan.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
